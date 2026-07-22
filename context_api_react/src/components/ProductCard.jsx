@@ -5,7 +5,13 @@ import {
   FaHeart,
 } from "react-icons/fa";
 
-const ProductCard = ({ product,setCart }) => {
+import { useContext } from "react";
+import { MyCart } from "../context/MyCart";
+
+const ProductCard = ({ product }) => {
+
+let {setCart}=useContext(MyCart)
+
   return (
     <div className="w-80  bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
 

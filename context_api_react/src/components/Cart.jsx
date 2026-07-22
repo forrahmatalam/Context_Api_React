@@ -1,7 +1,11 @@
 import React from "react";
 import { FaStar, FaTrash } from "react-icons/fa";
+import { useContext } from "react";
+import { MyCart } from "../context/MyCart";
 
-const Cart = ({ cart }) => {
+const Cart = () => {
+
+let {cart}=useContext(MyCart)
 
   const totalPrice = cart.reduce((total, item) => {
     return total + item.price;

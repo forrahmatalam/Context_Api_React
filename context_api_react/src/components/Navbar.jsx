@@ -1,6 +1,11 @@
 import React from 'react'
+import { useContext } from 'react'
+import { MyCart } from '../context/MyCart'
 
-const Navbar = ({setToggle}) => {
+const Navbar = () => {
+
+let {setToggle}=useContext(MyCart)
+
   return (
     <div className=" rounded-xl flex justify-between items-center bg-black p-4">
       <div>Logo</div>

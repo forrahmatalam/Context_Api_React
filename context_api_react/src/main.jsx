@@ -1,10 +1,11 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Test from "./Test.jsx";
-import { ContextProvider } from "./context/MyContext.jsx";
+import { MyCartContextProvider } from "./context/MyCart";
+import App from "./App.jsx";
+
 
 createRoot(document.getElementById("root")).render(
-  <ContextProvider>
-    <Test />
-  </ContextProvider>
+  <MyCartContextProvider>
+    <App />
+  </MyCartContextProvider>
 );

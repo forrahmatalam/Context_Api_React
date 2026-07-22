@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./components/Navbar";
 import Productcard from "./components/Productcard";
 import Cart from "./components/Cart";
-import { useState } from "react";
+import { MyCart } from "./context/MyCart";
 
 const App = () => {
 
-const [toggle, setToggle] = useState(false);
-
-const [cart, setCart] = useState([]);
-
-
+ let {toggle} = useContext(MyCart)
 
   let products= [
     {
@@ -285,19 +281,20 @@ const [cart, setCart] = useState([]);
     },
   ];
 
+ 
 
   return (
     <div className="p-4 h-screen">
-      <Navbar setToggle={setToggle} />
+      <Navbar />
 
 {
 
 toggle ? <div>
-  <Cart cart={cart}/>
+  <Cart/>
 </div> : <div className="grid grid-cols-4 gap-4">
  {
         products.map((val) => {
-         return <Productcard setCart={setCart} key={val.id} product={val}/>
+         return <Productcard  key={val.id} product={val}/>
         })
       }
 
