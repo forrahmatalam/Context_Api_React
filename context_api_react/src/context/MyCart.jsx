@@ -14,4 +14,4 @@ const [cart, setCart] = useState([]);
  return <MyCart.Provider value={{toggle,setToggle,cart,setCart}}>{children}</MyCart.Provider>  //children yha customer hai
 }
 
-export { MyCart, MyCartContextProvider };
+export { MyCart, MyCartContextProvider }; //if bracket me export krni hoto import me {MyCartContextProvider} lagana hoga nhi to export error ayega
